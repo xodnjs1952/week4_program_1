@@ -360,7 +360,6 @@ int main(void)
 			}
 		}
 	//250,700 왼쪽방향	화살표
-
 		for (int i = 200; i < 300; i++) {
 			for (int j = 650; j < 750; j++) {
 
@@ -401,7 +400,88 @@ int main(void)
 
 			}
 		}
+	//350,100//윗방향 화살표
+		for (int i = 300; i < 500; i++) {
+			for (int j = 50; j < 150; j++) {
 
+				double empty_circle;
+				empty_circle = ((double)i - 350)*((double)i - 350) + ((double)j - 100)*((double)j - 100) - 49 * 49;
+
+				if ((90<xpos) && (xpos<110) && (340<(840 - ypos)) && ((840 - ypos)<360)) {
+
+
+					double mouse_circle;
+					mouse_circle = ((double)i - 350)*((double)i - 350) + ((double)j - 100)*((double)j - 100) - 50 * 50;
+
+					if ((mouse_circle < 0.0) && (empty_circle>0.0)) {
+						drawPixel(j, i, 1.0f, 0.0f, 0.0f);
+						for (int i = 330; i<370; i++)
+							drawPixel(100, i, 1.0f, 0.0f, 0.0f);
+						drawLine(80, 350, 100, 370, 1.0f, 0.0f, 0.0f);
+						drawLine(100, 370, 120, 350, 1.0f, 0.0f, 0.0f);
+					}
+
+				}
+				else {
+
+					double mouse_circle;
+					mouse_circle = ((double)i - 350)*((double)i - 350) + ((double)j - 100)*((double)j - 100) - 50 * 50;
+
+					if ((mouse_circle < 0.0) && (empty_circle>0.0)) {
+						drawPixel(j, i, 0.0f, 1.0f, 0.0f);
+						for (int i = 330; i<370; i++)
+							drawPixel(100, i, 1.0f, 0.0f, 0.0f);
+						drawLine( 80, 350, 100, 370, 1.0f, 0.0f, 0.0f);
+						drawLine(100, 370, 120, 350, 1.0f, 0.0f, 0.0f);
+					}
+
+				}
+
+			}
+		}
+	//350,300//A모양
+		for (int i = 300; i < 500; i++) {
+			for (int j = 250; j < 350; j++) {
+
+				double empty_circle;
+				empty_circle = ((double)i - 350)*((double)i - 350) + ((double)j - 300)*((double)j - 300) - 49 * 49;
+
+				if ((300<xpos) && (xpos<310) && (340<(840 - ypos)) && ((840 - ypos)<360)) {
+
+
+					double mouse_circle;
+					mouse_circle = ((double)i - 350)*((double)i - 350) + ((double)j - 300)*((double)j - 300) - 50 * 50;
+
+					if ((mouse_circle < 0.0) && (empty_circle>0.0)) {
+						drawPixel(j, i, 1.0f, 0.0f, 0.0f);
+						for (int i = 289; i<311; i++)
+							drawPixel(i, 350, 1.0f, 0.0f, 0.0f);
+
+
+						drawLine(280, 320, 300, 380, 1.0f, 0.0f, 0.0f);
+						drawLine(300, 380, 320, 320, 1.0f, 0.0f, 0.0f);
+					}
+
+				}
+				else {
+
+					double mouse_circle;
+					mouse_circle = ((double)i - 350)*((double)i - 350) + ((double)j - 300)*((double)j - 300) - 50 * 50;
+
+					if ((mouse_circle < 0.0) && (empty_circle>0.0)) {
+						drawPixel(j, i, 0.0f, 1.0f, 0.0f);
+						for (int i = 289; i<311; i++)
+							drawPixel(i, 350, 1.0f, 0.0f, 0.0f);
+						
+							
+						drawLine(280, 320, 300, 380, 1.0f, 0.0f, 0.0f);
+						drawLine(300, 380, 320, 320, 1.0f, 0.0f, 0.0f);
+					}
+
+				}
+
+			}
+		}
 			glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 		/* Swap front and back buffers */
 		glfwSwapBuffers(window);
